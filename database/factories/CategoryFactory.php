@@ -14,10 +14,11 @@ class CategoryFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            //
+            'title'=>$this->faker->name(),
+            'slug'=> str_replace(' ','-',$this->faker->name()),
         ];
     }
 }

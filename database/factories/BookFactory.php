@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -14,10 +15,16 @@ class BookFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+    public function definition()
     {
         return [
-            //
+            'title'=>$this->faker->title(),
+            'category_id'=>Category::all()->random()->id,
+            'slug'=>$this->faker->name(),
+            'author'=>$this->faker->firstName(),
+            'description'=>$this->faker->paragraph(),
+            'rating'=>$this->faker->numberBetween(0,5),
+            'image'=>'https://via.placeholder.com/300x200'
         ];
     }
 }
