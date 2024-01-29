@@ -12,13 +12,16 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-12">
-                        <h6 class="card-title py-5">Name of  the book</h6>
+                        <h6 class="card-title pt-5">Name of  the book</h6>
                         <h5 class="text-info">{{$bookreader->title}}</h5>
                         <h6 class="card-title">Author</h6>
                         <h5 class="text-info">{{$bookreader->title}}</h5>
                         <h6 class="card-title">Category</h6>
                         <h5 class="text-info">{{$bookreader->category->title}}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">Rate :  {{$bookreader->rating }}</h6>
+                        <div>
+                            <a href="{{asset('booksrc/pdfbook.pdf')}}">view in pdf or dowload it </a>
+                        </div>
                     </div>
                    </div>
                     <div class="card-body">

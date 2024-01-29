@@ -22,7 +22,7 @@
                         {{ strlen(strip_tags($book->description)) > 5 ? "..." : "" }} 
                     </p>
                     
-                        <a class="" href="{{ route('book.reader',$book->id) }}">Read More</a>
+                        <a class="btn btn-outline-primary" href="{{ route('book.reader',$book->id) }}">Read More</a>
                     </div>
                     </div>
                 </div>  
