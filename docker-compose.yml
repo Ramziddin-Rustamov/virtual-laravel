@@ -4,7 +4,7 @@ services:
             context: ./vendor/laravel/sail/runtimes/8.3
             dockerfile: Dockerfile
             args:
-                WWWGROUP: '${WWWGROUP}'
+                WWWGROUP: 'sail'
         image: sail-8.3/app
         extra_hosts:
             - 'host.docker.internal:host-gateway'
@@ -18,12 +18,12 @@ services:
             XDEBUG_CONFIG: '${SAIL_XDEBUG_CONFIG:-client_host=host.docker.internal}'
             IGNITION_LOCAL_SITES_PATH: '${PWD}'
         volumes:
-            - '.:/var/www/html'
+            - '.:/var/www/html'       
         networks:
             - sail
         depends_on:
             - mysql
-            - redis
+            - redis           
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
@@ -76,6 +76,7 @@ services:
             - sail
         ports:
             - 8001:80
+        
 networks:
     sail:
         driver: bridge

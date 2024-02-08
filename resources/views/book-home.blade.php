@@ -6,8 +6,8 @@
         <h1 class="text-info text-center py-2 my-2">Our Books</h1>
             @if(count($books))
                 @foreach ($books as $book)
-                    <div class="col-md-3 mt-3">
-                        <div class="card" style="width: 18rem;">
+                    <div class=" col-12  col-md-4 col-xl-3 mt-3" >
+                    <div class="card" style="width: 18rem;">
                     <img src="{{$book->image}}" class="card-img-top" alt="book image">
                     <div class="card-body">
                     <h6 class="card-title">Name of  the book</h6>
